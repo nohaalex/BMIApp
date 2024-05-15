@@ -52,7 +52,7 @@ class _BMIState extends State<BMI> {
                             color:Color.fromARGB(255, 255, 255, 255)
                         )
                     ),
-                    labelText: 'Enter your weight in kg',
+                    labelText: 'Enter your weight in kgs',
                     prefixIcon: Icon(Icons.accessibility_new_sharp),
                     // hintText: 'Weight',
                   ),
