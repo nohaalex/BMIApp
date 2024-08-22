@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 
 class BMI extends StatefulWidget {
-  const BMI({super.key});
+  const BMI({Key? key}) : super(key: key);
 
   @override
   State<BMI> createState() => _BMIState();
 }
 
 class _BMIState extends State<BMI> {
-
-
   var weightController = TextEditingController();
   var heightController = TextEditingController();
-
   double Result = 0;
   String? Description;
   bool showResult = false; // Initialize to hide the result containers
@@ -20,34 +17,30 @@ class _BMIState extends State<BMI> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // resizeToAvoidBottomInset: true,
-
+        resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          title: const Text(
+          title: Text(
             'FIT-IZEN',
             style: TextStyle(
               fontSize: 30,
               color: Color.fromARGB(255, 245, 245, 220),
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 0, 100, 0),
+          backgroundColor: Color.fromARGB(255, 0, 100, 0),
           centerTitle: true,
         ),
-
-        backgroundColor: const Color.fromARGB(255, 215, 215, 190),
-
-
+        backgroundColor: Color.fromARGB(255, 215, 215, 190),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 40,
               ),
               Container(
                 width: 300,
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 child: TextFormField(
                   controller: weightController,
                   keyboardType: TextInputType.number,
@@ -55,12 +48,12 @@ class _BMIState extends State<BMI> {
           
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                             color:Color.fromARGB(255, 255, 255, 255)
                         )
                     ),
                     labelText: 'Enter your weight in kg',
-                    prefixIcon: const Icon(Icons.accessibility_new_sharp),
+                    prefixIcon: Icon(Icons.accessibility_new_sharp),
                     // hintText: 'Weight',
                   ),
                 ),
@@ -68,7 +61,7 @@ class _BMIState extends State<BMI> {
               Center(
                 child: Container(
                   width: 300,
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
                   child: TextFormField(
                     controller: heightController,
                     keyboardType: TextInputType.number,
@@ -79,7 +72,7 @@ class _BMIState extends State<BMI> {
           
                       labelText: 'Enter your Height in meters',
           
-                      prefixIcon: const Icon(Icons.person_pin),
+                      prefixIcon: Icon(Icons.person_pin),
                       // hintText: 'Height',
                       fillColor: Colors.grey,
                     ),
@@ -88,7 +81,7 @@ class _BMIState extends State<BMI> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 0, 100, 0)
+                    backgroundColor: Color.fromARGB(255, 0, 100, 0)
                 ),
                 onPressed: () {
                   setState(() {
@@ -125,7 +118,7 @@ class _BMIState extends State<BMI> {
                     }
                   });
                 },
-                child: const Text(
+                child: Text(
                   'Calculate BMI',
                   style: TextStyle(
                     fontSize: 30,
@@ -137,38 +130,38 @@ class _BMIState extends State<BMI> {
               Visibility(
                 visible: showResult,
                 child: Container(
-                  margin: const EdgeInsets.only(left:10,top:50 ),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(300),
-                      color: Colors.black
-                  ),
+                  margin: EdgeInsets.only(left:10,top:50 ),
+                  padding: EdgeInsets.all(10),
                   child: Text(
                     'BMI: ${Result.toStringAsFixed(2)}',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
                     ),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(300),
+                      color: Colors.black
                   ),
                 ),
               ),
               Visibility(
                 visible: showResult,
                 child: Container(
-                  margin: const EdgeInsets.all(20),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Result < 18 || Result > 25 ?const Color.fromARGB(255, 128, 0, 0) : const Color.fromARGB(255, 0, 100, 0)
-                  ),
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
           
                   child: Text(
-                    '$Description',
-                    style: const TextStyle(
+                    '${Description}',
+                    style: TextStyle(
                       fontSize: 25,
                       color:Colors.white,
                     ),
                     textAlign: TextAlign.center,
+                  ),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Result < 18 || Result > 25 ?Color.fromARGB(255, 128, 0, 0) : Color.fromARGB(255, 0, 100, 0)
                   ),
                 ),
               ),
