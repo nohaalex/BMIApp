@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+
 var message = "no button";
+
 var items = [
   'Item 1',
   'Item 2',
@@ -11,7 +13,11 @@ var items = [
 
 String dropdownvalue = 'Item 1';
 
+
+
 class ButtonTypes extends StatefulWidget {
+  const ButtonTypes({super.key});
+
   @override
   _ButtonTypesState createState() => _ButtonTypesState();
 }
@@ -23,7 +29,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
       home: Scaffold(
           backgroundColor: Colors.tealAccent,
           appBar: AppBar(
-            title: Text('Flutter Button Widgets',
+            title: const Text('Flutter Button Widgets',
             style: TextStyle(
               color: Colors.white
 
@@ -34,12 +40,12 @@ class _ButtonTypesState extends State<ButtonTypes> {
           ),
           body: Center(
               child: Column(
-                  children: <Widget>[
+                  children:[
                 Container(
                   child: Center(
                     child: Text(
-                      "You clicked:${message}",
-                      style: TextStyle(
+                      "You clicked:$message",
+                      style: const TextStyle(
                           color: Colors.red,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
@@ -47,10 +53,12 @@ class _ButtonTypesState extends State<ButtonTypes> {
                   ),
                 ),
                 Container(
-// margin: EdgeInsets.all(25),
+                  // margin: EdgeInsets.all(25),
                   child: TextButton(
-                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.deepPurpleAccent)),
-                    child: Text(
+                    style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(Colors.deepPurpleAccent)
+                    ),
+                    child: const Text(
                       'TextButton',
                       style: TextStyle(fontSize: 20.0, color: Colors.white),
                     ),
@@ -65,8 +73,9 @@ class _ButtonTypesState extends State<ButtonTypes> {
 // margin: EdgeInsets.all(25),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.teal)),
-                    child: Text(
+                        backgroundColor: WidgetStateProperty.all(Colors.teal)
+                    ),
+                    child: const Text(
                       'Elevated Button',
                       style: TextStyle(fontSize: 20.0),
                     ),
@@ -79,54 +88,62 @@ class _ButtonTypesState extends State<ButtonTypes> {
                 ),
 
                 Container(
-                  margin: EdgeInsets.all(25),
+                  margin: const EdgeInsets.all(25),
                   child: FloatingActionButton(
-                    child: Icon(Icons.add),
                     backgroundColor: Colors.green.shade700,
                     onPressed: () {
                       setState(() {
                         message = "Floating Action Button";
                       });
                     },
+                    child: const Icon(Icons.add),
                   ),
                 ),
+
                 Container(
                   child: DropdownButton(
-// Initial Value
+
+                    // Initial Value
                     value: dropdownvalue,
-// Down Arrow Icon
+
+                    // Down Arrow Icon
                     icon: const Icon(Icons.keyboard_arrow_down),
-// Array list of items
+
+                    // Array list of items
                     items: items.map((String items) {
                       return DropdownMenuItem(
                         value: items,
                         child: Text(items,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30
-                        ),),
+                        ),
+                        ),
                       );
                     }).toList(),
 
                     onChanged: (String? value) {
                       setState(() {
                         dropdownvalue = value!;
-                        message = "${value} from drop down";
+                        message = "$value from drop down";
                       });
                     },
-// After selecting the desired option,it will
-// change button value to selected value
+
+                  // After selecting the desired option,it will
+                  // change button value to selected value
                   ),
                 ),
+
+
                 Container(
-                  padding: EdgeInsets.all(50),
+                  padding: const EdgeInsets.all(50),
                   alignment: Alignment.center,
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.directions_transit,
                     ),
                     iconSize: 50,
                     color: Colors.deepOrangeAccent,
-                    splashColor: Colors.purple,
+                    splashColor: Colors.red,
                     onPressed: () {
                       setState(() {
                         message = "Icon Button";
@@ -134,43 +151,53 @@ class _ButtonTypesState extends State<ButtonTypes> {
                     },
                   ),
                 ),
+
+
+
                 Container(
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   child: PopupMenuButton(
 
                     itemBuilder: (context) => [
-                      PopupMenuItem(
-                        child: Text("First"),
+                      const PopupMenuItem(
                         value: 1,
+                        child: Text("First"),
                       ),
-                      PopupMenuItem(
-                        child: Text("Second"),
+                      const PopupMenuItem(
                         value: 2,
+                        child: Text("Second"),
                       )
                     ],
                     onSelected: (value) {
                       setState(() {
-                        message = "Popup${value}";
+                        message = "Popup$value";
                       });
                     },
                   ),
                 ),
+
+
+
+
                 Center(
                   child: OutlinedButton(
                     style: ButtonStyle(
                         backgroundColor:
-                        MaterialStateProperty.all(Colors.amberAccent)),
-                    child: Text('Outline Button'),
+                        WidgetStateProperty.all(Colors.amberAccent)),
+                    child: const Text('Outline Button'),
                     onPressed: () {
                       setState(() {
                         message = "Outlined Button";
                       });
                     },
                   ),
+
                 ),
               ]
               )
           )
+
+
       ),
     );
   }

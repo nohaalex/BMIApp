@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SliverGridEx extends StatelessWidget {
-  const SliverGridEx({Key? key}) : super(key: key);
+  const SliverGridEx({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -12,7 +12,7 @@ class SliverGridEx extends StatelessWidget {
   }
 }
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
         body: CustomScrollView(
             slivers: <Widget>[
               SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount:3,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,

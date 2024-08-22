@@ -15,7 +15,7 @@ class _TrythisState extends State<Trythis> {
       home:SafeArea(
         child: Scaffold(
             appBar: AppBar( 
-              title: Text("CONTACTS",
+              title: const Text("CONTACTS",
               style: TextStyle(
                 fontFamily: 'Whisper',
                 fontSize: 30,
@@ -23,14 +23,14 @@ class _TrythisState extends State<Trythis> {
                 color: Colors.white
               ),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.account_circle_outlined,
                 color: Colors.white,
                 size: 30,
               ),
               centerTitle: true,
               backgroundColor: Colors.red,
-              actions: [
+              actions: const [
                 Icon(Icons.account_circle,
                 color: Colors.white,),
           
@@ -40,7 +40,7 @@ class _TrythisState extends State<Trythis> {
             body: SafeArea(
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.account_circle,
                     color: Colors.white,
                     size: 50,
@@ -48,11 +48,11 @@ class _TrythisState extends State<Trythis> {
                   Container(
                     height: 50,
                     width: 245,
-                    margin: EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,
                       color: Colors.white.withOpacity(0.5),
-                      borderRadius: BorderRadius.all(Radius.elliptical(40.0, 40.0)),
+                      borderRadius: const BorderRadius.all(Radius.elliptical(40.0, 40.0)),
                    
                     ),
               
@@ -66,7 +66,7 @@ class _TrythisState extends State<Trythis> {
                       shape: BoxShape.circle,
                       color: Colors.white.withOpacity(0.5),
                     ),
-                    child: ClipOval(
+                    child: const ClipOval(
                       child: Image(
                         image: AssetImage('images/darthVader.jpeg'),
                         fit: BoxFit.fill,

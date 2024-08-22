@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:learn1/MyFlutterIcon.dart';
 
 
@@ -12,10 +11,10 @@ class HelloWorld extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(
+          leading: const Icon(
               MyFlutterApp.grooveshark
           ),
-          title: Text('HELLO THERE',
+          title: const Text('HELLO THERE',
           style: TextStyle(
             fontFamily: 'Whisper',
             color: Colors.white,

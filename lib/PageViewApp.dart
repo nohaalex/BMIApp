@@ -1,31 +1,39 @@
 import 'package:flutter/material.dart';
 
 class PageViewApp extends StatelessWidget {
-  static const String _title = 'PageView App';
+
+  const PageViewApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return   MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: _title,
+
       home: PageViewHome(),
     );
   }
 }
+
+
 class PageViewHome extends StatelessWidget {
-  const PageViewHome({Key? key}) : super(key: key);
+  const PageViewHome({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('PageView Widget')),
+        title:  Center(
+            child: Text(
+                'PageView Widget'
+            )
+        ),
       ),
       body: PageView(
         scrollDirection: Axis.horizontal,
 
-        children: <Widget>[
+        children: [
+
           Container(
             color: Colors.tealAccent,
-            child:  Text(
+            child:  const Text(
               'Page One',
               style: TextStyle(
                 fontFamily: 'Courier',
@@ -34,9 +42,10 @@ class PageViewHome extends StatelessWidget {
               ),
             ),
           ),
+
           Container(
             color: Colors.yellow,
-            child:  Text(
+            child:  const Text(
               'Page Two',
               style: TextStyle(
                 fontFamily: 'Courier',
@@ -45,9 +54,10 @@ class PageViewHome extends StatelessWidget {
               ),
             ),
           ),
+
           Container(
             color: Colors.deepOrangeAccent,
-            child:  Text(
+            child:  const Text(
               'Page Three',
               style: TextStyle(
                 fontFamily: 'Courier',
@@ -56,6 +66,7 @@ class PageViewHome extends StatelessWidget {
               ),
             ),
           ),
+
         ],
       ),
     );

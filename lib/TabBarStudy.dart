@@ -113,7 +113,7 @@
 import 'package:flutter/material.dart';
 
 class TabBarStudy extends StatefulWidget {
-  const TabBarStudy({Key? key}) : super(key: key);
+  const TabBarStudy({super.key});
 
   @override
   State<TabBarStudy> createState() => _TabBarStudyState();
@@ -131,24 +131,31 @@ class _TabBarStudyState extends State<TabBarStudy> {
               children: [
                 Container(
                   color: Colors.black38, // Color for TabBar background
-                  child: TabBar(
+                  child: const TabBar(
                     indicatorColor: Colors.yellow,
-                    indicatorSize: TabBarIndicatorSize.label,
+                    indicatorSize: TabBarIndicatorSize.tab,
                     labelColor: Colors.yellow,
                     unselectedLabelColor: Colors.white,
 
                     tabs: [
-                      Tab(icon: Icon(Icons.add_a_photo)),
-                      Tab(icon: Icon(Icons.abc_outlined)),
-                      Tab(icon: Icon(Icons.add_box_outlined)),
+                      Tab(
+                          icon: Icon(Icons.account_box_outlined)
+                      ),
+                      Tab(
+                          icon: Icon(Icons.abc_outlined)
+                      ),
+                      Tab(
+                          icon: Icon(Icons.add_box_outlined)
+                      ),
                     ],
                   ),
+
                 ),
                 Expanded(
                   child: TabBarView(
                     children: [
                       Container(
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Home',
                             style: TextStyle(fontSize: 30),
@@ -156,7 +163,7 @@ class _TabBarStudyState extends State<TabBarStudy> {
                         ),
                       ),
                       Container(
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'About',
                             style: TextStyle(fontSize: 30),
@@ -167,42 +174,42 @@ class _TabBarStudyState extends State<TabBarStudy> {
                         child: Column(
                           children: [
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.red,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.blue,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.orange,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.deepOrange,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.cyan,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.blueAccent,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.black,
                             ),
                             Container(
-                              height: 100,
+                              height: 400,
                               width: 200,
                               color: Colors.green,
                             )

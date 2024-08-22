@@ -10,10 +10,11 @@ class BuildCont extends StatefulWidget {
 class _BuildContState extends State<BuildCont> {
 
 
-  Container BuildCont(Color c){
+  Container BuildCont(Color c, double h , double w){
     return Container(
-      height: 100,
-      margin: EdgeInsets.all(10),
+      height: h,
+      width: w,
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color:c,
         border: Border.all(
@@ -28,23 +29,28 @@ class _BuildContState extends State<BuildCont> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'BUILD CONTAINER',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 30,
               fontWeight: FontWeight.w500,
             ),
           ),
+          centerTitle: true,
+          backgroundColor: Colors.green,
         ),
-        body:Column(
-          children: [
-            BuildCont(Colors.orange),
-            BuildCont(Colors.blue),
-            BuildCont(Colors.red),
-          ],
+        body:Center(
+          child: Column(
+            children: [
+              BuildCont(Colors.orange,50,300),
+              BuildCont(Colors.blue,300,300),
+              BuildCont(Colors.red,50,300),
+            ],
+          ),
         ) ,
       ),
     );

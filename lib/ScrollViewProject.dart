@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class ScrollViewProject extends StatefulWidget {
   const ScrollViewProject({super.key});
@@ -15,7 +14,7 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('SCROLL',
+          title: const Text('SCROLL',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
@@ -39,11 +38,11 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                   child: Container(
                     height: 300,
                     width: 450,
-                    padding: EdgeInsets.all(120.00),
+                    padding: const EdgeInsets.all(120.00),
                     decoration: BoxDecoration(
                         color:flag?Colors.black:Colors.red,
                     ),
-                    child: Text('FIRST BOX',
+                    child: const Text('FIRST BOX',
                       style: TextStyle(
                           fontSize: 30,
 
@@ -55,11 +54,11 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                 Container(
                   height: 300,
                   width: 450,
-                  padding: EdgeInsets.all(120.00),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(120.00),
+                  decoration: const BoxDecoration(
                       color: Colors.blue
                   ),
-                  child: Text('SECOND BOX',
+                  child: const Text('SECOND BOX',
                     style: TextStyle(
                         fontSize: 30
                     ),
@@ -69,11 +68,11 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                 Container(
                   height: 300,
                   width: 450,
-                  padding: EdgeInsets.all(120.00),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(120.00),
+                  decoration: const BoxDecoration(
                       color: Colors.green
                   ),
-                  child: Text('THIRD BOX',
+                  child: const Text('THIRD BOX',
                     style: TextStyle(
                         fontSize: 30
                     ),
@@ -83,12 +82,12 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                 Container(
                   height: 300,
                   width: 450,
-                  padding: EdgeInsets.all(120.00),
+                  padding: const EdgeInsets.all(120.00),
 
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.grey
                   ),
-                  child: Text('FOURTH BOX',
+                  child: const Text('FOURTH BOX',
                     style: TextStyle(
                         fontSize: 30
                     ),
@@ -98,11 +97,11 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                 Container(
                   height: 300,
                   width: 450,
-                  padding: EdgeInsets.all(120.00),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(120.00),
+                  decoration: const BoxDecoration(
                       color: Colors.brown
                   ),
-                  child: Text('FIFTH BOX',
+                  child: const Text('FIFTH BOX',
                     style: TextStyle(
                         fontSize: 30
                     ),
@@ -112,11 +111,11 @@ class _ScrollViewProjectState extends State<ScrollViewProject> {
                 Container(
                   height: 300,
                   width: 450,
-                  padding: EdgeInsets.all(120.00),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(120.00),
+                  decoration: const BoxDecoration(
                       color: Colors.blueAccent
                   ),
-                  child: Text('SIXTH BOX',
+                  child: const Text('SIXTH BOX',
                     style: TextStyle(
                         fontSize: 30
                     ),

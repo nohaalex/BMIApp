@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 
-
 class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
+      debugShowCheckedModeBanner:false,
       home: QuizHomePage(),
     );
   }
 }
 
 class QuizHomePage extends StatefulWidget {
+  const QuizHomePage({super.key});
+
   @override
   _QuizHomePageState createState() => _QuizHomePageState();
 }
@@ -22,7 +26,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
     "Hypertext Markup Language",
     "Hypertext Modified Language",
     "Hypertext middle language",
-    "Hpertext Market Language"
+    "Hypertext Market Language"
   ];
 
   String correctAnswer = "Hypertext Markup Language";
@@ -32,7 +36,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Quiz App',
           style: TextStyle(
             fontSize: 30,
@@ -45,14 +49,14 @@ class _QuizHomePageState extends State<QuizHomePage> {
       ),
       body: Column(
         children: [
-          Text(
+          const Text(
             'Expand HTML',
             style: TextStyle(
               fontSize: 30,
               color: Colors.black,
             ),
           ),
-          Container(
+          SizedBox(
             height: 500,
             child: ListView.builder(
               itemBuilder: (context, index) {
@@ -73,8 +77,8 @@ class _QuizHomePageState extends State<QuizHomePage> {
                   child: Container(
                     height: 50,
                     width: 500,
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: answer != answers[index]
@@ -85,7 +89,7 @@ class _QuizHomePageState extends State<QuizHomePage> {
                     ),
                     child: Text(
                       answers[index],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                       ),
@@ -97,6 +101,9 @@ class _QuizHomePageState extends State<QuizHomePage> {
               itemCount: answers.length,
             ),
           ),
+
+
+
           // ElevatedButton(
           //   onPressed: () {
           //
@@ -111,22 +118,29 @@ class _QuizHomePageState extends State<QuizHomePage> {
           //     ),
           //   ),
           // )
+
+
+
         ],
       ),
     );
   }
 }
 
+
+
+
 class QuizSecondPage extends StatefulWidget {
   final int? score;
 
-  QuizSecondPage({required this.score});
+  const QuizSecondPage({super.key, required this.score});
 
   @override
   _QuizSecondPageState createState() => _QuizSecondPageState();
 }
 
 class _QuizSecondPageState extends State<QuizSecondPage> {
+
   List<String> answers = [
     "Cascading Side Sheet",
     "Cascading Style Sheet",
@@ -143,7 +157,7 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
       canPop: false,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Quiz App',
             style: TextStyle(
               fontSize: 30,
@@ -156,14 +170,14 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
         ),
         body: Column(
           children: [
-            Text(
+            const Text(
               'Expand CSS',
               style: TextStyle(
                 fontSize: 30,
                 color: Colors.black,
               ),
             ),
-            Container(
+            SizedBox(
               height: 500,
               child: ListView.builder(
                 itemBuilder: (context, index) {
@@ -184,8 +198,8 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
                     child: Container(
                       height: 50,
                       width: 500,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: answer != answers[index]
@@ -196,7 +210,7 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
                       ),
                       child: Text(
                         answers[index],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -208,11 +222,12 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
                 itemCount: answers.length,
               ),
             ),
+
             ElevatedButton(
               onPressed: () {
 
               },
-              child: Text(
+              child: const Text(
                 'Result',
                 style: TextStyle(
                   fontSize: 20,
@@ -220,6 +235,7 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
                 ),
               ),
             )
+
           ],
         ),
       ),
@@ -230,7 +246,7 @@ class _QuizSecondPageState extends State<QuizSecondPage> {
 class ResultPage extends StatelessWidget {
   final int? score;
 
-  ResultPage({required this.score});
+  const ResultPage({super.key, required this.score});
 
   @override
   Widget build(BuildContext context) {
@@ -238,7 +254,7 @@ class ResultPage extends StatelessWidget {
       canPop: false ,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Result',
             style: TextStyle(
               fontSize: 30,
@@ -253,7 +269,7 @@ class ResultPage extends StatelessWidget {
           color: Colors.white,
           child: Text(
             score.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
               color: Colors.black,
             ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FinalSlivers extends StatelessWidget {
-  const FinalSlivers({Key? key}) : super(key: key);
+  const FinalSlivers({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Center(
+          title: const Center(
             child: Text("Slivers"),
           ),
         ),
@@ -22,10 +22,10 @@ class FinalSlivers extends StatelessWidget {
             ),
             SliverGrid(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200.0,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                childAspectRatio: 4.0,
+                maxCrossAxisExtent: 100.0,
+                mainAxisSpacing: 20.0,
+                crossAxisSpacing: 30.0,
+                childAspectRatio: 6.0,
               ),
               delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
@@ -39,7 +39,7 @@ class FinalSlivers extends StatelessWidget {
               ),
             ),
             SliverFixedExtentList(
-              itemExtent: 50.0,
+              itemExtent: 200.0,
               delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
                   return Container(
@@ -48,7 +48,7 @@ class FinalSlivers extends StatelessWidget {
                     child: Text('List Item $index'),
                   );
                 },
-                childCount: 30
+                childCount: 80
               ),
             ),
           ],

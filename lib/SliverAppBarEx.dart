@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 
 class SliverAppBarEx extends StatelessWidget {
+  const SliverAppBarEx({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
+          slivers: <Widget> [
+            const SliverAppBar(
               collapsedHeight:30.0,
               toolbarHeight: 30.0,
               expandedHeight: 100.0,
@@ -16,7 +18,12 @@ class SliverAppBarEx extends StatelessWidget {
               pinned: true,
               backgroundColor: Colors.brown,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text('SliverAppBar'),
+                title: Text('SliverAppBar',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                ),
               ),
             ),
             SliverList(
@@ -31,7 +38,7 @@ class SliverAppBarEx extends StatelessWidget {
                         child: Column(
                           children: [
                             Text('Container Number: ${index+1} ',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 30,
                               color: Colors.white
                             ),

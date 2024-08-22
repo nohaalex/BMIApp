@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:learn1/HelloWorld.dart';
 import 'package:learn1/ScrollViewProject.dart';
 import 'package:learn1/ListBuilding.dart';
-import 'package:learn1/HelloWorld.dart';
-import 'package:learn1/ListBuilding.dart';
-import 'package:learn1/ScrollViewProject.dart';
 
 class BottomNavBars extends StatefulWidget {
   const BottomNavBars({super.key});
@@ -16,9 +13,9 @@ class BottomNavBars extends StatefulWidget {
 class _BottomNavBarsState extends State<BottomNavBars> {
 
   List<Widget> BottomBars=[
-    HelloWorld(),
-    ScrollViewProject(),
-    ListBuilding()
+    const HelloWorld(),
+    const ScrollViewProject(),
+    const ListBuilding()
   ];
 
   var Index=0;
@@ -28,18 +25,18 @@ class _BottomNavBarsState extends State<BottomNavBars> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.person_pin),
-          actions: [
+          leading: const Icon(Icons.person_pin),
+          actions: const [
             Icon(Icons.arrow_right_alt)
           ],
-          title: Text('Navigation'
+          title: const Text('Navigation'
           ),
           centerTitle: true,
           backgroundColor: Colors.green,
         ),
         
         body:BottomBars[Index],
-        bottomNavigationBar: BottomNavigationBar(items: [
+        bottomNavigationBar: BottomNavigationBar(items: const [
           BottomNavigationBarItem(icon: Icon(Icons.import_contacts_sharp),label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: 'Your Account')

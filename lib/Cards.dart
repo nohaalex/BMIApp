@@ -13,24 +13,29 @@ class _CardsState extends State<Cards> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Flutter Card Example')),
+          title: const Center(child: Text('Flutter Card Example')),
           backgroundColor: Colors.pinkAccent,
         ),
         backgroundColor: Colors.tealAccent,
-        body: CardShapes(),
+        body: const CardShapes(),
       ),
     );
   }
 }
+
 class CardShapes extends StatelessWidget {
+  const CardShapes({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
           children:[
+
+
             Card(
               shape: RoundedRectangleBorder(
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.pinkAccent,
                   width: 3,
                 ),
@@ -38,38 +43,60 @@ class CardShapes extends StatelessWidget {
 
               ),
               color: Colors.blue,
-              child: Container(
-                
-                padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Container(
 
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.blueAccent,
-                ),
+                    padding: const EdgeInsets.all(16),
 
-                child: Text(
-                  'RoundedRectangleBorder',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      // color: Colors.red,
+                    ),
+
+                    child: const Text(
+                      'RoundedRectangleBorder',
+                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
               ),
             ),
+
+
+
+
+
             Card(
               shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(10)
+                borderRadius: BorderRadius.circular(10),
+                side: const BorderSide(
+                  color: Colors.blue,
+                  width: 5,
+                ),
               ),
               color: Colors.yellow,
               child: Container(
                 height: 200,
                 width: 200,
+                // color: Colors.red,
+                padding: EdgeInsets.all(40),
                 child: Text('Beveled Rectangle Border',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.green,
-                ),),
+                ),
+                ),
               ),
             ),
+
+
+
+
+
+
             Card(
-              shape: StadiumBorder(
+              shape: const StadiumBorder(
                 side: BorderSide(
                   color: Colors.pinkAccent,
                   width: 2.0,
@@ -78,13 +105,18 @@ class CardShapes extends StatelessWidget {
               color: Colors.red,
               
               child: Container(
-                padding: EdgeInsets.all(16),
-                child: Text(
+                padding: const EdgeInsets.all(16),
+                child: const Text(
                   'StadiumBorder',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
+
+
+
+
+
           ],
         ));
   }

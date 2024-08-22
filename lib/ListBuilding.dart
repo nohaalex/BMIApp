@@ -27,7 +27,7 @@ class _ListBuildingState extends State<ListBuilding> {
         home: SafeArea(
           child: Scaffold(
             appBar: AppBar(
-              title: Text('LIST VIEW BUILDER',
+              title: const Text('LIST VIEW BUILDER',
               style: TextStyle(
                 fontSize: 30,
                 color:Colors.white
@@ -37,13 +37,15 @@ class _ListBuildingState extends State<ListBuilding> {
               centerTitle: true,
             ),
             body: Column(
-              children: [Container(
+              children: [
+                Container(
                 height: 80,
               ),
-                Container(
+                SizedBox(
                   height: 600,
 
-                  child: ListView.builder(itemBuilder: (context,index){
+                  child: ListView.builder(
+                    itemBuilder: (context,index){
                     return Column(
                       children: [
                         Image(image: NetworkImage('${cars[index]['imagelink']}')),
@@ -51,21 +53,21 @@ class _ListBuildingState extends State<ListBuilding> {
                         Container(
                             height: 80,
                             width:350,
-                            margin: EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(40),
                               color: Colors.grey
                             ),
                           child: Text(
-                            
+
                             'COMPANY: ${cars[index]['company']} \n  ESTD:${cars[index]['estd']}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 25,
                               color:Colors.black
                             ),
                             textAlign: TextAlign.center,
                           ),
-                        
+
                         ),
                       ],
                     );
